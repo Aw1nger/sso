@@ -1,0 +1,12 @@
+import * as z from 'zod';
+export const UserFindUniqueResultSchema = z.nullable(z.object({
+  id: z.number().int(),
+  email: z.string(),
+  username: z.string(),
+  firstname: z.string().optional(),
+  lastname: z.string().optional(),
+  avatar: z.string().optional(),
+  aproved: z.boolean(),
+  AuthCodes: z.array(z.unknown()),
+  Session: z.array(z.unknown())
+}));

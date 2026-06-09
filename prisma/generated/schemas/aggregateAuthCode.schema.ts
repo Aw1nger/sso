@@ -1,0 +1,14 @@
+import type { Prisma } from '../../../generated/prisma/client';
+import * as z from 'zod';
+import { AuthCodeOrderByWithRelationInputObjectSchema as AuthCodeOrderByWithRelationInputObjectSchema } from './objects/AuthCodeOrderByWithRelationInput.schema';
+import { AuthCodeWhereInputObjectSchema as AuthCodeWhereInputObjectSchema } from './objects/AuthCodeWhereInput.schema';
+import { AuthCodeWhereUniqueInputObjectSchema as AuthCodeWhereUniqueInputObjectSchema } from './objects/AuthCodeWhereUniqueInput.schema';
+import { AuthCodeCountAggregateInputObjectSchema as AuthCodeCountAggregateInputObjectSchema } from './objects/AuthCodeCountAggregateInput.schema';
+import { AuthCodeMinAggregateInputObjectSchema as AuthCodeMinAggregateInputObjectSchema } from './objects/AuthCodeMinAggregateInput.schema';
+import { AuthCodeMaxAggregateInputObjectSchema as AuthCodeMaxAggregateInputObjectSchema } from './objects/AuthCodeMaxAggregateInput.schema';
+import { AuthCodeAvgAggregateInputObjectSchema as AuthCodeAvgAggregateInputObjectSchema } from './objects/AuthCodeAvgAggregateInput.schema';
+import { AuthCodeSumAggregateInputObjectSchema as AuthCodeSumAggregateInputObjectSchema } from './objects/AuthCodeSumAggregateInput.schema';
+
+export const AuthCodeAggregateSchema: z.ZodType<Prisma.AuthCodeAggregateArgs> = z.object({ orderBy: z.union([AuthCodeOrderByWithRelationInputObjectSchema, AuthCodeOrderByWithRelationInputObjectSchema.array()]).optional(), where: AuthCodeWhereInputObjectSchema.optional(), cursor: AuthCodeWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), AuthCodeCountAggregateInputObjectSchema ]).optional(), _min: AuthCodeMinAggregateInputObjectSchema.optional(), _max: AuthCodeMaxAggregateInputObjectSchema.optional(), _avg: AuthCodeAvgAggregateInputObjectSchema.optional(), _sum: AuthCodeSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.AuthCodeAggregateArgs>;
+
+export const AuthCodeAggregateZodSchema = z.object({ orderBy: z.union([AuthCodeOrderByWithRelationInputObjectSchema, AuthCodeOrderByWithRelationInputObjectSchema.array()]).optional(), where: AuthCodeWhereInputObjectSchema.optional(), cursor: AuthCodeWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), AuthCodeCountAggregateInputObjectSchema ]).optional(), _min: AuthCodeMinAggregateInputObjectSchema.optional(), _max: AuthCodeMaxAggregateInputObjectSchema.optional(), _avg: AuthCodeAvgAggregateInputObjectSchema.optional(), _sum: AuthCodeSumAggregateInputObjectSchema.optional() }).strict();

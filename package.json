@@ -1,15 +1,34 @@
 {
   "name": "be-gateway-137",
   "version": "1.0.50",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysia/cron": "^1.4.2",
+    "@elysia/openapi": "^1.4.15",
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "@types/nodemailer": "^8.0.0",
+    "@types/pg": "^8.20.0",
+    "argon2": "^0.44.0",
+    "dotenv": "^17.4.2",
+    "elysia": "latest",
+    "jose": "^6.2.3",
+    "nodemailer": "^8.0.7",
+    "pg": "^8.20.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/node": "^25.6.0",
+    "bun-types": "latest",
+    "prettier-plugin-prisma": "^5.0.0",
+    "prisma": "^7.8.0",
+    "prisma-zod-generator": "^2.1.4"
   },
   "module": "src/index.js"
 }

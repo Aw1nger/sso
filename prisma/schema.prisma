@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+generator zod {
+  provider = "prisma-zod-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  email    String @unique
+  username String @unique
+
+  firstname String?
+  lastname  String?
+  avatar    String?
+
+  aproved Boolean @default(false)
+
+  AuthCodes AuthCode[]
+  Session   Session[]
+
+  @@map("users")
+}
+
+model AuthCode {
+  id        Int      @id @default(autoincrement())
+  code      String
+  userId    Int      @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  clientId  Int      @map("client_id")
+
+  user   User   @relation(fields: [userId], references: [id])
+  client Client @relation(fields: [clientId], references: [id])
+
+  @@map("auth_codes")
+}
+
+model Client {
+  id          Int      @id @default(autoincrement())
+  name        String
+  secret      String
+  redirectUri String[] @map("redirect_uri")
+
+  AuthCode AuthCode[]
+  Session  Session[]
+
+  @@map("clients")
+}
+
+model Session {
+  id    Int    @id @default(autoincrement())
+  token String @unique
+
+  userId   Int @map("user_id")
+  clientId Int @map("client_id")
+
+  revoked Boolean @default(false)
+
+  user   User   @relation(fields: [userId], references: [id])
+  client Client @relation(fields: [clientId], references: [id])
+
+  @@map("sessions")
+}
+
+model KeyPair {
+  id         Int    @id @default(autoincrement())
+  publicKey  String @db.Text
+  privateKey String @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  alghoritm String        @default("RS256")
+  status    KeyPairStatus @default(active)
+
+  @@map("key_pairs")
+}
+
+model FirstRegister {
+  id        Int      @id @default(autoincrement())
+  email     String
+  username  String
+  code      String
+  expiresAt DateTime @map("expires_at")
+
+  @@map("first_register")
+}
+
+enum KeyPairStatus {
+  expired
+  writeoff
+  active
+}

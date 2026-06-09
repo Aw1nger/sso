@@ -1,0 +1,15 @@
+import type { Prisma } from '../../../generated/prisma/client';
+import * as z from 'zod';
+import { AuthCodeWhereInputObjectSchema as AuthCodeWhereInputObjectSchema } from './objects/AuthCodeWhereInput.schema';
+import { AuthCodeOrderByWithAggregationInputObjectSchema as AuthCodeOrderByWithAggregationInputObjectSchema } from './objects/AuthCodeOrderByWithAggregationInput.schema';
+import { AuthCodeScalarWhereWithAggregatesInputObjectSchema as AuthCodeScalarWhereWithAggregatesInputObjectSchema } from './objects/AuthCodeScalarWhereWithAggregatesInput.schema';
+import { AuthCodeScalarFieldEnumSchema } from './enums/AuthCodeScalarFieldEnum.schema';
+import { AuthCodeCountAggregateInputObjectSchema as AuthCodeCountAggregateInputObjectSchema } from './objects/AuthCodeCountAggregateInput.schema';
+import { AuthCodeMinAggregateInputObjectSchema as AuthCodeMinAggregateInputObjectSchema } from './objects/AuthCodeMinAggregateInput.schema';
+import { AuthCodeMaxAggregateInputObjectSchema as AuthCodeMaxAggregateInputObjectSchema } from './objects/AuthCodeMaxAggregateInput.schema';
+import { AuthCodeAvgAggregateInputObjectSchema as AuthCodeAvgAggregateInputObjectSchema } from './objects/AuthCodeAvgAggregateInput.schema';
+import { AuthCodeSumAggregateInputObjectSchema as AuthCodeSumAggregateInputObjectSchema } from './objects/AuthCodeSumAggregateInput.schema';
+
+export const AuthCodeGroupBySchema: z.ZodType<Prisma.AuthCodeGroupByArgs> = z.object({ where: AuthCodeWhereInputObjectSchema.optional(), orderBy: z.union([AuthCodeOrderByWithAggregationInputObjectSchema, AuthCodeOrderByWithAggregationInputObjectSchema.array()]).optional(), having: AuthCodeScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(AuthCodeScalarFieldEnumSchema), _count: z.union([ z.literal(true), AuthCodeCountAggregateInputObjectSchema ]).optional(), _min: AuthCodeMinAggregateInputObjectSchema.optional(), _max: AuthCodeMaxAggregateInputObjectSchema.optional(), _avg: AuthCodeAvgAggregateInputObjectSchema.optional(), _sum: AuthCodeSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.AuthCodeGroupByArgs>;
+
+export const AuthCodeGroupByZodSchema = z.object({ where: AuthCodeWhereInputObjectSchema.optional(), orderBy: z.union([AuthCodeOrderByWithAggregationInputObjectSchema, AuthCodeOrderByWithAggregationInputObjectSchema.array()]).optional(), having: AuthCodeScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(AuthCodeScalarFieldEnumSchema), _count: z.union([ z.literal(true), AuthCodeCountAggregateInputObjectSchema ]).optional(), _min: AuthCodeMinAggregateInputObjectSchema.optional(), _max: AuthCodeMaxAggregateInputObjectSchema.optional(), _avg: AuthCodeAvgAggregateInputObjectSchema.optional(), _sum: AuthCodeSumAggregateInputObjectSchema.optional() }).strict();

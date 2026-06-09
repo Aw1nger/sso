@@ -1,0 +1,15 @@
+import type { Prisma } from '../../../generated/prisma/client';
+import * as z from 'zod';
+import { KeyPairWhereInputObjectSchema as KeyPairWhereInputObjectSchema } from './objects/KeyPairWhereInput.schema';
+import { KeyPairOrderByWithAggregationInputObjectSchema as KeyPairOrderByWithAggregationInputObjectSchema } from './objects/KeyPairOrderByWithAggregationInput.schema';
+import { KeyPairScalarWhereWithAggregatesInputObjectSchema as KeyPairScalarWhereWithAggregatesInputObjectSchema } from './objects/KeyPairScalarWhereWithAggregatesInput.schema';
+import { KeyPairScalarFieldEnumSchema } from './enums/KeyPairScalarFieldEnum.schema';
+import { KeyPairCountAggregateInputObjectSchema as KeyPairCountAggregateInputObjectSchema } from './objects/KeyPairCountAggregateInput.schema';
+import { KeyPairMinAggregateInputObjectSchema as KeyPairMinAggregateInputObjectSchema } from './objects/KeyPairMinAggregateInput.schema';
+import { KeyPairMaxAggregateInputObjectSchema as KeyPairMaxAggregateInputObjectSchema } from './objects/KeyPairMaxAggregateInput.schema';
+import { KeyPairAvgAggregateInputObjectSchema as KeyPairAvgAggregateInputObjectSchema } from './objects/KeyPairAvgAggregateInput.schema';
+import { KeyPairSumAggregateInputObjectSchema as KeyPairSumAggregateInputObjectSchema } from './objects/KeyPairSumAggregateInput.schema';
+
+export const KeyPairGroupBySchema: z.ZodType<Prisma.KeyPairGroupByArgs> = z.object({ where: KeyPairWhereInputObjectSchema.optional(), orderBy: z.union([KeyPairOrderByWithAggregationInputObjectSchema, KeyPairOrderByWithAggregationInputObjectSchema.array()]).optional(), having: KeyPairScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(KeyPairScalarFieldEnumSchema), _count: z.union([ z.literal(true), KeyPairCountAggregateInputObjectSchema ]).optional(), _min: KeyPairMinAggregateInputObjectSchema.optional(), _max: KeyPairMaxAggregateInputObjectSchema.optional(), _avg: KeyPairAvgAggregateInputObjectSchema.optional(), _sum: KeyPairSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.KeyPairGroupByArgs>;
+
+export const KeyPairGroupByZodSchema = z.object({ where: KeyPairWhereInputObjectSchema.optional(), orderBy: z.union([KeyPairOrderByWithAggregationInputObjectSchema, KeyPairOrderByWithAggregationInputObjectSchema.array()]).optional(), having: KeyPairScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(KeyPairScalarFieldEnumSchema), _count: z.union([ z.literal(true), KeyPairCountAggregateInputObjectSchema ]).optional(), _min: KeyPairMinAggregateInputObjectSchema.optional(), _max: KeyPairMaxAggregateInputObjectSchema.optional(), _avg: KeyPairAvgAggregateInputObjectSchema.optional(), _sum: KeyPairSumAggregateInputObjectSchema.optional() }).strict();

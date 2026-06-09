@@ -1,0 +1,14 @@
+import type { Prisma } from '../../../generated/prisma/client';
+import * as z from 'zod';
+import { KeyPairOrderByWithRelationInputObjectSchema as KeyPairOrderByWithRelationInputObjectSchema } from './objects/KeyPairOrderByWithRelationInput.schema';
+import { KeyPairWhereInputObjectSchema as KeyPairWhereInputObjectSchema } from './objects/KeyPairWhereInput.schema';
+import { KeyPairWhereUniqueInputObjectSchema as KeyPairWhereUniqueInputObjectSchema } from './objects/KeyPairWhereUniqueInput.schema';
+import { KeyPairCountAggregateInputObjectSchema as KeyPairCountAggregateInputObjectSchema } from './objects/KeyPairCountAggregateInput.schema';
+import { KeyPairMinAggregateInputObjectSchema as KeyPairMinAggregateInputObjectSchema } from './objects/KeyPairMinAggregateInput.schema';
+import { KeyPairMaxAggregateInputObjectSchema as KeyPairMaxAggregateInputObjectSchema } from './objects/KeyPairMaxAggregateInput.schema';
+import { KeyPairAvgAggregateInputObjectSchema as KeyPairAvgAggregateInputObjectSchema } from './objects/KeyPairAvgAggregateInput.schema';
+import { KeyPairSumAggregateInputObjectSchema as KeyPairSumAggregateInputObjectSchema } from './objects/KeyPairSumAggregateInput.schema';
+
+export const KeyPairAggregateSchema: z.ZodType<Prisma.KeyPairAggregateArgs> = z.object({ orderBy: z.union([KeyPairOrderByWithRelationInputObjectSchema, KeyPairOrderByWithRelationInputObjectSchema.array()]).optional(), where: KeyPairWhereInputObjectSchema.optional(), cursor: KeyPairWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), KeyPairCountAggregateInputObjectSchema ]).optional(), _min: KeyPairMinAggregateInputObjectSchema.optional(), _max: KeyPairMaxAggregateInputObjectSchema.optional(), _avg: KeyPairAvgAggregateInputObjectSchema.optional(), _sum: KeyPairSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.KeyPairAggregateArgs>;
+
+export const KeyPairAggregateZodSchema = z.object({ orderBy: z.union([KeyPairOrderByWithRelationInputObjectSchema, KeyPairOrderByWithRelationInputObjectSchema.array()]).optional(), where: KeyPairWhereInputObjectSchema.optional(), cursor: KeyPairWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), KeyPairCountAggregateInputObjectSchema ]).optional(), _min: KeyPairMinAggregateInputObjectSchema.optional(), _max: KeyPairMaxAggregateInputObjectSchema.optional(), _avg: KeyPairAvgAggregateInputObjectSchema.optional(), _sum: KeyPairSumAggregateInputObjectSchema.optional() }).strict();
