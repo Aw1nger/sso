@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "generatorVersion": "1.0.50",
-  "generatedAt": "2026-05-11T06:46:11.784Z",
-  "outputPath": "/home/aww1nger/Learn/be-gateway-137/prisma/generated",
+  "generatedAt": "2026-07-09T10:47:14.222Z",
+  "outputPath": "/Users/aw1nger/Projects/sso/prisma/generated",
   "files": [
     "schemas/enums/TransactionIsolationLevel.schema.ts",
     "schemas/enums/UserScalarFieldEnum.schema.ts",
