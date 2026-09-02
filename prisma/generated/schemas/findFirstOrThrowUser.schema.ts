@@ -16,7 +16,8 @@ export const UserFindFirstOrThrowSelectSchema: z.ZodType<Prisma.UserSelect> = z.
     firstname: z.boolean().optional(),
     lastname: z.boolean().optional(),
     avatar: z.boolean().optional(),
-    aproved: z.boolean().optional(),
+    accountStatus: z.boolean().optional(),
+    role: z.boolean().optional(),
     AuthCodes: z.boolean().optional(),
     Session: z.boolean().optional(),
     _count: z.boolean().optional()
@@ -29,7 +30,8 @@ export const UserFindFirstOrThrowSelectZodSchema = z.object({
     firstname: z.boolean().optional(),
     lastname: z.boolean().optional(),
     avatar: z.boolean().optional(),
-    aproved: z.boolean().optional(),
+    accountStatus: z.boolean().optional(),
+    role: z.boolean().optional(),
     AuthCodes: z.boolean().optional(),
     Session: z.boolean().optional(),
     _count: z.boolean().optional()

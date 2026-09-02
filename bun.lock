@@ -24,6 +24,7 @@
       "devDependencies": {
         "@types/node": "^25.6.0",
         "bun-types": "latest",
+        "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-prisma": "^5.0.0",
         "prisma": "^7.8.0",
         "prisma-zod-generator": "^2.1.4",
@@ -414,6 +415,8 @@
     "postgres-interval": ["postgres-interval@1.2.0", "", { "dependencies": { "xtend": "^4.0.0" } }, "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ=="],
 
     "prettier": ["prettier@3.8.3", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw=="],
+
+    "prettier-plugin-organize-imports": ["prettier-plugin-organize-imports@4.3.0", "", { "peerDependencies": { "prettier": ">=2.0", "typescript": ">=2.9", "vue-tsc": "^2.1.0 || 3" }, "optionalPeers": ["vue-tsc"] }, "sha512-FxFz0qFhyBsGdIsb697f/EkvHzi5SZOhWAjxcx2dLt+Q532bAlhswcXGYB1yzjZ69kW8UoadFBw7TyNwlq96Iw=="],
 
     "prettier-plugin-prisma": ["prettier-plugin-prisma@5.0.0", "", { "dependencies": { "@prisma/prisma-schema-wasm": "4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584" }, "peerDependencies": { "prettier": ">=2 || >=3" } }, "sha512-jTJV04D9+yF7ziOOMs7CJe4ijgAH7DEGjt0SAWAToGNRy1H6BEhvcKA2UQH6gC6KVW5zeeOSAvsoiDDTt9oKXg=="],
 

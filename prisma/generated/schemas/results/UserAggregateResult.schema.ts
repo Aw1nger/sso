@@ -6,7 +6,8 @@ export const UserAggregateResultSchema = z.object({  _count: z.object({
     firstname: z.number(),
     lastname: z.number(),
     avatar: z.number(),
-    aproved: z.number(),
+    accountStatus: z.number(),
+    role: z.number(),
     AuthCodes: z.number(),
     Session: z.number()
   }).optional(),

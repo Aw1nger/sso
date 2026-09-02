@@ -381,6 +381,9 @@ export type SessionUncheckedUpdateManyWithoutClientNestedInput = {
     updateMany?: Prisma.SessionUpdateManyWithWhereWithoutClientInput | Prisma.SessionUpdateManyWithWhereWithoutClientInput[];
     deleteMany?: Prisma.SessionScalarWhereInput | Prisma.SessionScalarWhereInput[];
 };
+export type BoolFieldUpdateOperationsInput = {
+    set?: boolean;
+};
 export type SessionCreateWithoutUserInput = {
     token: string;
     revoked?: boolean;

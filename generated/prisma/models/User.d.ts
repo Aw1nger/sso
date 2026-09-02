@@ -1,4 +1,5 @@
 import type * as runtime from "@prisma/client/runtime/client";
+import type * as $Enums from "../enums";
 import type * as Prisma from "../internal/prismaNamespace";
 /**
  * Model User
@@ -25,7 +26,8 @@ export type UserMinAggregateOutputType = {
     firstname: string | null;
     lastname: string | null;
     avatar: string | null;
-    aproved: boolean | null;
+    accountStatus: $Enums.UserStatus | null;
+    role: $Enums.Role | null;
 };
 export type UserMaxAggregateOutputType = {
     id: number | null;
@@ -34,7 +36,8 @@ export type UserMaxAggregateOutputType = {
     firstname: string | null;
     lastname: string | null;
     avatar: string | null;
-    aproved: boolean | null;
+    accountStatus: $Enums.UserStatus | null;
+    role: $Enums.Role | null;
 };
 export type UserCountAggregateOutputType = {
     id: number;
@@ -43,7 +46,8 @@ export type UserCountAggregateOutputType = {
     firstname: number;
     lastname: number;
     avatar: number;
-    aproved: number;
+    accountStatus: number;
+    role: number;
     _all: number;
 };
 export type UserAvgAggregateInputType = {
@@ -59,7 +63,8 @@ export type UserMinAggregateInputType = {
     firstname?: true;
     lastname?: true;
     avatar?: true;
-    aproved?: true;
+    accountStatus?: true;
+    role?: true;
 };
 export type UserMaxAggregateInputType = {
     id?: true;
@@ -68,7 +73,8 @@ export type UserMaxAggregateInputType = {
     firstname?: true;
     lastname?: true;
     avatar?: true;
-    aproved?: true;
+    accountStatus?: true;
+    role?: true;
 };
 export type UserCountAggregateInputType = {
     id?: true;
@@ -77,7 +83,8 @@ export type UserCountAggregateInputType = {
     firstname?: true;
     lastname?: true;
     avatar?: true;
-    aproved?: true;
+    accountStatus?: true;
+    role?: true;
     _all?: true;
 };
 export type UserAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -163,7 +170,8 @@ export type UserGroupByOutputType = {
     firstname: string | null;
     lastname: string | null;
     avatar: string | null;
-    aproved: boolean;
+    accountStatus: $Enums.UserStatus;
+    role: $Enums.Role;
     _count: UserCountAggregateOutputType | null;
     _avg: UserAvgAggregateOutputType | null;
     _sum: UserSumAggregateOutputType | null;
@@ -183,7 +191,8 @@ export type UserWhereInput = {
     firstname?: Prisma.StringNullableFilter<"User"> | string | null;
     lastname?: Prisma.StringNullableFilter<"User"> | string | null;
     avatar?: Prisma.StringNullableFilter<"User"> | string | null;
-    aproved?: Prisma.BoolFilter<"User"> | boolean;
+    accountStatus?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeListRelationFilter;
     Session?: Prisma.SessionListRelationFilter;
 };
@@ -194,7 +203,8 @@ export type UserOrderByWithRelationInput = {
     firstname?: Prisma.SortOrderInput | Prisma.SortOrder;
     lastname?: Prisma.SortOrderInput | Prisma.SortOrder;
     avatar?: Prisma.SortOrderInput | Prisma.SortOrder;
-    aproved?: Prisma.SortOrder;
+    accountStatus?: Prisma.SortOrder;
+    role?: Prisma.SortOrder;
     AuthCodes?: Prisma.AuthCodeOrderByRelationAggregateInput;
     Session?: Prisma.SessionOrderByRelationAggregateInput;
 };
@@ -208,7 +218,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
     firstname?: Prisma.StringNullableFilter<"User"> | string | null;
     lastname?: Prisma.StringNullableFilter<"User"> | string | null;
     avatar?: Prisma.StringNullableFilter<"User"> | string | null;
-    aproved?: Prisma.BoolFilter<"User"> | boolean;
+    accountStatus?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeListRelationFilter;
     Session?: Prisma.SessionListRelationFilter;
 }, "id" | "email" | "username">;
@@ -219,7 +230,8 @@ export type UserOrderByWithAggregationInput = {
     firstname?: Prisma.SortOrderInput | Prisma.SortOrder;
     lastname?: Prisma.SortOrderInput | Prisma.SortOrder;
     avatar?: Prisma.SortOrderInput | Prisma.SortOrder;
-    aproved?: Prisma.SortOrder;
+    accountStatus?: Prisma.SortOrder;
+    role?: Prisma.SortOrder;
     _count?: Prisma.UserCountOrderByAggregateInput;
     _avg?: Prisma.UserAvgOrderByAggregateInput;
     _max?: Prisma.UserMaxOrderByAggregateInput;
@@ -236,7 +248,8 @@ export type UserScalarWhereWithAggregatesInput = {
     firstname?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null;
     lastname?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null;
     avatar?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null;
-    aproved?: Prisma.BoolWithAggregatesFilter<"User"> | boolean;
+    accountStatus?: Prisma.EnumUserStatusWithAggregatesFilter<"User"> | $Enums.UserStatus;
+    role?: Prisma.EnumRoleWithAggregatesFilter<"User"> | $Enums.Role;
 };
 export type UserCreateInput = {
     email: string;
@@ -244,7 +257,8 @@ export type UserCreateInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     AuthCodes?: Prisma.AuthCodeCreateNestedManyWithoutUserInput;
     Session?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
@@ -255,7 +269,8 @@ export type UserUncheckedCreateInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUncheckedCreateNestedManyWithoutUserInput;
     Session?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
@@ -265,7 +280,8 @@ export type UserUpdateInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUpdateManyWithoutUserNestedInput;
     Session?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
@@ -276,7 +292,8 @@ export type UserUncheckedUpdateInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUncheckedUpdateManyWithoutUserNestedInput;
     Session?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
@@ -287,7 +304,8 @@ export type UserCreateManyInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
 };
 export type UserUpdateManyMutationInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -295,7 +313,8 @@ export type UserUpdateManyMutationInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
 };
 export type UserUncheckedUpdateManyInput = {
     id?: Prisma.IntFieldUpdateOperationsInput | number;
@@ -304,7 +323,8 @@ export type UserUncheckedUpdateManyInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
 };
 export type UserCountOrderByAggregateInput = {
     id?: Prisma.SortOrder;
@@ -313,7 +333,8 @@ export type UserCountOrderByAggregateInput = {
     firstname?: Prisma.SortOrder;
     lastname?: Prisma.SortOrder;
     avatar?: Prisma.SortOrder;
-    aproved?: Prisma.SortOrder;
+    accountStatus?: Prisma.SortOrder;
+    role?: Prisma.SortOrder;
 };
 export type UserAvgOrderByAggregateInput = {
     id?: Prisma.SortOrder;
@@ -325,7 +346,8 @@ export type UserMaxOrderByAggregateInput = {
     firstname?: Prisma.SortOrder;
     lastname?: Prisma.SortOrder;
     avatar?: Prisma.SortOrder;
-    aproved?: Prisma.SortOrder;
+    accountStatus?: Prisma.SortOrder;
+    role?: Prisma.SortOrder;
 };
 export type UserMinOrderByAggregateInput = {
     id?: Prisma.SortOrder;
@@ -334,7 +356,8 @@ export type UserMinOrderByAggregateInput = {
     firstname?: Prisma.SortOrder;
     lastname?: Prisma.SortOrder;
     avatar?: Prisma.SortOrder;
-    aproved?: Prisma.SortOrder;
+    accountStatus?: Prisma.SortOrder;
+    role?: Prisma.SortOrder;
 };
 export type UserSumOrderByAggregateInput = {
     id?: Prisma.SortOrder;
@@ -349,8 +372,11 @@ export type StringFieldUpdateOperationsInput = {
 export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null;
 };
-export type BoolFieldUpdateOperationsInput = {
-    set?: boolean;
+export type EnumUserStatusFieldUpdateOperationsInput = {
+    set?: $Enums.UserStatus;
+};
+export type EnumRoleFieldUpdateOperationsInput = {
+    set?: $Enums.Role;
 };
 export type IntFieldUpdateOperationsInput = {
     set?: number;
@@ -389,7 +415,8 @@ export type UserCreateWithoutAuthCodesInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     Session?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutAuthCodesInput = {
@@ -399,7 +426,8 @@ export type UserUncheckedCreateWithoutAuthCodesInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     Session?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutAuthCodesInput = {
@@ -421,7 +449,8 @@ export type UserUpdateWithoutAuthCodesInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     Session?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutAuthCodesInput = {
@@ -431,7 +460,8 @@ export type UserUncheckedUpdateWithoutAuthCodesInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     Session?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutSessionInput = {
@@ -440,7 +470,8 @@ export type UserCreateWithoutSessionInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     AuthCodes?: Prisma.AuthCodeCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutSessionInput = {
@@ -450,7 +481,8 @@ export type UserUncheckedCreateWithoutSessionInput = {
     firstname?: string | null;
     lastname?: string | null;
     avatar?: string | null;
-    aproved?: boolean;
+    accountStatus?: $Enums.UserStatus;
+    role?: $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutSessionInput = {
@@ -472,7 +504,8 @@ export type UserUpdateWithoutSessionInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutSessionInput = {
@@ -482,7 +515,8 @@ export type UserUncheckedUpdateWithoutSessionInput = {
     firstname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     lastname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-    aproved?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    accountStatus?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
+    role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     AuthCodes?: Prisma.AuthCodeUncheckedUpdateManyWithoutUserNestedInput;
 };
 /**
@@ -524,7 +558,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
     firstname?: boolean;
     lastname?: boolean;
     avatar?: boolean;
-    aproved?: boolean;
+    accountStatus?: boolean;
+    role?: boolean;
     AuthCodes?: boolean | Prisma.User$AuthCodesArgs<ExtArgs>;
     Session?: boolean | Prisma.User$SessionArgs<ExtArgs>;
     _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>;
@@ -536,7 +571,8 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
     firstname?: boolean;
     lastname?: boolean;
     avatar?: boolean;
-    aproved?: boolean;
+    accountStatus?: boolean;
+    role?: boolean;
 }, ExtArgs["result"]["user"]>;
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
@@ -545,7 +581,8 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
     firstname?: boolean;
     lastname?: boolean;
     avatar?: boolean;
-    aproved?: boolean;
+    accountStatus?: boolean;
+    role?: boolean;
 }, ExtArgs["result"]["user"]>;
 export type UserSelectScalar = {
     id?: boolean;
@@ -554,9 +591,10 @@ export type UserSelectScalar = {
     firstname?: boolean;
     lastname?: boolean;
     avatar?: boolean;
-    aproved?: boolean;
+    accountStatus?: boolean;
+    role?: boolean;
 };
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "username" | "firstname" | "lastname" | "avatar" | "aproved", ExtArgs["result"]["user"]>;
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "username" | "firstname" | "lastname" | "avatar" | "accountStatus" | "role", ExtArgs["result"]["user"]>;
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     AuthCodes?: boolean | Prisma.User$AuthCodesArgs<ExtArgs>;
     Session?: boolean | Prisma.User$SessionArgs<ExtArgs>;
@@ -577,7 +615,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
         firstname: string | null;
         lastname: string | null;
         avatar: string | null;
-        aproved: boolean;
+        accountStatus: $Enums.UserStatus;
+        role: $Enums.Role;
     }, ExtArgs["result"]["user"]>;
     composites: {};
 };
@@ -940,7 +979,8 @@ export interface UserFieldRefs {
     readonly firstname: Prisma.FieldRef<"User", 'String'>;
     readonly lastname: Prisma.FieldRef<"User", 'String'>;
     readonly avatar: Prisma.FieldRef<"User", 'String'>;
-    readonly aproved: Prisma.FieldRef<"User", 'Boolean'>;
+    readonly accountStatus: Prisma.FieldRef<"User", 'UserStatus'>;
+    readonly role: Prisma.FieldRef<"User", 'Role'>;
 }
 /**
  * User findUnique

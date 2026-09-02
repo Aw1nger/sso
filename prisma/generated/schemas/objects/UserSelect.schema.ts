@@ -11,7 +11,8 @@ const makeSchema = () => z.object({
   firstname: z.boolean().optional(),
   lastname: z.boolean().optional(),
   avatar: z.boolean().optional(),
-  aproved: z.boolean().optional(),
+  accountStatus: z.boolean().optional(),
+  role: z.boolean().optional(),
   AuthCodes: z.union([z.boolean(), z.lazy(() => AuthCodeFindManySchema)]).optional(),
   Session: z.union([z.boolean(), z.lazy(() => SessionFindManySchema)]).optional(),
   _count: z.union([z.boolean(), z.lazy(() => UserCountOutputTypeArgsObjectSchema)]).optional()

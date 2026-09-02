@@ -16,3 +16,21 @@ export const KeyPairStatus = {
 } as const
 
 export type KeyPairStatus = (typeof KeyPairStatus)[keyof typeof KeyPairStatus]
+
+
+export const UserStatus = {
+  pending: 'pending',
+  active: 'active',
+  rejected: 'rejected',
+  blocked: 'blocked'
+} as const
+
+export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus]
+
+
+export const Role = {
+  admin: 'admin',
+  user: 'user'
+} as const
+
+export type Role = (typeof Role)[keyof typeof Role]

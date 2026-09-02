@@ -3,7 +3,10 @@ import type { Prisma } from '../../../../generated/prisma/client';
 import { IntFilterObjectSchema as IntFilterObjectSchema } from './IntFilter.schema';
 import { StringFilterObjectSchema as StringFilterObjectSchema } from './StringFilter.schema';
 import { StringNullableFilterObjectSchema as StringNullableFilterObjectSchema } from './StringNullableFilter.schema';
-import { BoolFilterObjectSchema as BoolFilterObjectSchema } from './BoolFilter.schema';
+import { EnumUserStatusFilterObjectSchema as EnumUserStatusFilterObjectSchema } from './EnumUserStatusFilter.schema';
+import { UserStatusSchema } from '../enums/UserStatus.schema';
+import { EnumRoleFilterObjectSchema as EnumRoleFilterObjectSchema } from './EnumRoleFilter.schema';
+import { RoleSchema } from '../enums/Role.schema';
 import { AuthCodeListRelationFilterObjectSchema as AuthCodeListRelationFilterObjectSchema } from './AuthCodeListRelationFilter.schema';
 import { SessionListRelationFilterObjectSchema as SessionListRelationFilterObjectSchema } from './SessionListRelationFilter.schema'
 
@@ -17,7 +20,8 @@ const userwhereinputSchema = z.object({
   firstname: z.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()]).optional().nullable(),
   lastname: z.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()]).optional().nullable(),
   avatar: z.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()]).optional().nullable(),
-  aproved: z.union([z.lazy(() => BoolFilterObjectSchema), z.boolean()]).optional(),
+  accountStatus: z.union([z.lazy(() => EnumUserStatusFilterObjectSchema), UserStatusSchema]).optional(),
+  role: z.union([z.lazy(() => EnumRoleFilterObjectSchema), RoleSchema]).optional(),
   AuthCodes: z.lazy(() => AuthCodeListRelationFilterObjectSchema).optional(),
   Session: z.lazy(() => SessionListRelationFilterObjectSchema).optional()
 }).strict();

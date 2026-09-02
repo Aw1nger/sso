@@ -1,5 +1,7 @@
 import * as z from 'zod';
 import type { Prisma } from '../../../../generated/prisma/client';
+import { UserStatusSchema } from '../enums/UserStatus.schema';
+import { RoleSchema } from '../enums/Role.schema';
 import { AuthCodeUncheckedCreateNestedManyWithoutUserInputObjectSchema as AuthCodeUncheckedCreateNestedManyWithoutUserInputObjectSchema } from './AuthCodeUncheckedCreateNestedManyWithoutUserInput.schema';
 import { SessionUncheckedCreateNestedManyWithoutUserInputObjectSchema as SessionUncheckedCreateNestedManyWithoutUserInputObjectSchema } from './SessionUncheckedCreateNestedManyWithoutUserInput.schema'
 
@@ -10,7 +12,8 @@ const makeSchema = () => z.object({
   firstname: z.string().optional().nullable(),
   lastname: z.string().optional().nullable(),
   avatar: z.string().optional().nullable(),
-  aproved: z.boolean().optional(),
+  accountStatus: UserStatusSchema.optional(),
+  role: RoleSchema.optional(),
   AuthCodes: z.lazy(() => AuthCodeUncheckedCreateNestedManyWithoutUserInputObjectSchema).optional(),
   Session: z.lazy(() => SessionUncheckedCreateNestedManyWithoutUserInputObjectSchema).optional()
 }).strict();

@@ -21,7 +21,8 @@ model User {
   lastname  String?
   avatar    String?
 
-  aproved Boolean @default(false)
+  accountStatus UserStatus @default(pending)
+  role Role @default(user)
 
   AuthCodes AuthCode[]
   Session   Session[]
@@ -96,4 +97,16 @@ enum KeyPairStatus {
   expired
   writeoff
   active
+}
+
+enum UserStatus {
+  pending
+  active
+  rejected
+  blocked
+}
+
+enum Role {
+  admin
+  user
 }

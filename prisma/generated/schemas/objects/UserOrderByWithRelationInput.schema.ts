@@ -12,7 +12,8 @@ const makeSchema = () => z.object({
   firstname: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
   lastname: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
   avatar: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
-  aproved: SortOrderSchema.optional(),
+  accountStatus: SortOrderSchema.optional(),
+  role: SortOrderSchema.optional(),
   AuthCodes: z.lazy(() => AuthCodeOrderByRelationAggregateInputObjectSchema).optional(),
   Session: z.lazy(() => SessionOrderByRelationAggregateInputObjectSchema).optional()
 }).strict();

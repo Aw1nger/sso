@@ -1,4 +1,6 @@
 import * as z from 'zod';
+import { UserStatusSchema } from '../../enums/UserStatus.schema';
+import { RoleSchema } from '../../enums/Role.schema';
 // prettier-ignore
 export const UserInputSchema = z.object({
     id: z.number().int(),
@@ -7,7 +9,8 @@ export const UserInputSchema = z.object({
     firstname: z.string().optional().nullable(),
     lastname: z.string().optional().nullable(),
     avatar: z.string().optional().nullable(),
-    aproved: z.boolean(),
+    accountStatus: UserStatusSchema,
+    role: RoleSchema,
     AuthCodes: z.array(z.unknown()),
     Session: z.array(z.unknown())
 }).strict();

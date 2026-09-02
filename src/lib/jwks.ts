@@ -75,7 +75,8 @@ export const generateJWT = async (userId: number, clientId: number) => {
     firstname: user.firstname,
     lastname: user.lastname,
     avatar: user.avatar,
-  })
+    role: user.role,
+    status: user.accountStatus})
     .setProtectedHeader({
       alg: 'RS256',
       kid: secret.id.toString(),

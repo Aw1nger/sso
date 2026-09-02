@@ -9,7 +9,8 @@ const makeSchema = () => z.object({
   firstname: z.literal(true).optional(),
   lastname: z.literal(true).optional(),
   avatar: z.literal(true).optional(),
-  aproved: z.literal(true).optional()
+  accountStatus: z.literal(true).optional(),
+  role: z.literal(true).optional()
 }).strict();
 export const UserMinAggregateInputObjectSchema: z.ZodType<Prisma.UserMinAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.UserMinAggregateInputType>;
 export const UserMinAggregateInputObjectZodSchema = makeSchema();

@@ -6,7 +6,6 @@ export const UserGroupByResultSchema = z.array(z.object({
   firstname: z.string(),
   lastname: z.string(),
   avatar: z.string(),
-  aproved: z.boolean(),
   _count: z.object({
     id: z.number(),
     email: z.number(),
@@ -14,7 +13,8 @@ export const UserGroupByResultSchema = z.array(z.object({
     firstname: z.number(),
     lastname: z.number(),
     avatar: z.number(),
-    aproved: z.number(),
+    accountStatus: z.number(),
+    role: z.number(),
     AuthCodes: z.number(),
     Session: z.number()
   }).optional(),

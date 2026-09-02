@@ -6,7 +6,8 @@ export const UserUpdateResultSchema = z.nullable(z.object({
   firstname: z.string().optional(),
   lastname: z.string().optional(),
   avatar: z.string().optional(),
-  aproved: z.boolean(),
+  accountStatus: z.unknown(),
+  role: z.unknown(),
   AuthCodes: z.array(z.unknown()),
   Session: z.array(z.unknown())
 }));
